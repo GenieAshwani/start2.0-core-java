@@ -17,8 +17,13 @@ public class CustomLinkedList {
         addNodeAfter(head);
         addNodeAfter(head);
         addNodeAfter(head);
-        Node newHead = addNodeBefore(head);
-        printList(newHead);
+        //Node newHead = addNodeBefore(head);
+        printList(head);
+        Node node = findNode(head, 30);
+        System.out.println(node.data);
+        deleteLast(node);
+        printList(head);
+
     }
 
     public static void addNodeAfter(Node head)
@@ -57,6 +62,25 @@ public class CustomLinkedList {
             temp=temp.next;
         }
         System.out.print("NULL");
+    }
+
+    private static Node findNode(Node node,int data)
+    {
+        Node curr=node;
+        while(curr!=null)
+        {
+            if(curr.data==data)
+            {
+                return curr;
+            }
+            curr=curr.next;
+        }
+        return null;
+    }
+
+    private static void deleteLast(Node node)
+    {
+        node=null;
     }
 
 }
